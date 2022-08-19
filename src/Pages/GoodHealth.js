@@ -1,24 +1,14 @@
 import React from "react";
 
 function GoodHealth() {
-  const healthObject = [
-    { id: 1, healthStatus: "healthy" },
-    { id: 2, healthStatus: "healthy" },
-    { id: 3, healthStatus: "healthy" },
-    { id: 4, healthStatus: "healthy" },
-  ];
+  const healthObject = JSON.stringify({ status: "healthy" });
+  const healthObject2 = JSON.stringify({ status: "unhealthy" });
   return (
     <div>
-      {healthObject.map((item) => {
-        return (
-          <div>
-            <div> {`{`} </div>
-            <div> id : {item.id}</div>
-            <div>status : {item.healthStatus} </div>
-            <div>{`}`} </div>
-          </div>
-        );
-      })}
+      Json 1<div>{healthObject}</div>
+      <div style={{ marginTop: "20px" }}>
+        Json2 <div>{healthObject2}</div>
+      </div>
     </div>
   );
 }
