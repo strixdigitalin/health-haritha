@@ -2,8 +2,8 @@ const express = require("express");
 const app = express();
 // --------------------
 app.use(express.json({ limit: "50mb" }));
-// const PORT = process.env.PORT ;
-const PORT = 6000;
+const PORT = process.env.PORT;
+// const PORT = 6000;
 var cors = require("cors");
 app.use(cors({ origin: true, credentials: true }));
 // const app = require("../server")
@@ -26,8 +26,6 @@ app.use(function (req, res, next) {
 // --------API LIST
 
 app.use("/health", require("./Routes/HealthRoute"));
-
-
 
 app.listen(PORT, () => {
   console.log("Server is running on  socket", PORT);
